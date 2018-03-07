@@ -26,8 +26,12 @@ public class Abilities {
         public int fadedImage;
         public int price;
         
-        public String desc() {
+        public String mName() {
             return Messages.get(this, name());
+        }
+        
+        public String desc(){
+            return Messages.get(this, name()+".desc");
         }
         
         Ability(int image, int fadedImage, int price) {

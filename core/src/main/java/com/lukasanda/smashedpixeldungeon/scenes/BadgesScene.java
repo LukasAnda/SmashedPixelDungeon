@@ -30,6 +30,7 @@ import com.lukasanda.smashedpixeldungeon.messages.Messages;
 import com.lukasanda.smashedpixeldungeon.ui.Archs;
 import com.lukasanda.smashedpixeldungeon.ui.ExitButton;
 import com.lukasanda.smashedpixeldungeon.ui.Window;
+import com.lukasanda.smashedpixeldungeon.utils.GLog;
 import com.lukasanda.smashedpixeldungeon.windows.WndBadge;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
@@ -169,6 +170,7 @@ public class BadgesScene extends PixelScene {
 
 		@Override
 		protected void onClick() {
+            GLog.n("Clicked badge");
 			Sample.INSTANCE.play( Assets.SND_CLICK, 0.7f, 0.7f, 1.2f );
 			Game.scene().add( new WndBadge( badge ) );
 		}

@@ -564,8 +564,7 @@ public abstract class Mob extends Char {
 
 		if (alignment == Alignment.ENEMY){
 			rollToDropLoot();
-			//FIXME Instead of Mystery Meat drop a Soul stone
-			Dungeon.level.drop(new SoulStone(),pos,1f);
+			Dungeon.level.drop(new SoulStone(),pos,0.01f);
 		}
 		
 		if (Dungeon.hero.isAlive() && !Dungeon.level.heroFOV[pos]) {

@@ -111,8 +111,8 @@ public class TitleScene extends PixelScene {
 			}
 		};
 		add( btnAbout );
-		//FIXME placeholder name
-		DashboardItem btnSoulShop = new DashboardItem( "Soul Shop"/*Messages.get(this, "about")*/, 1 ) {
+		
+		DashboardItem btnSoulShop = new DashboardItem( Messages.get(this, "soulshop"), 4 ) {
 			@Override
 			protected void onClick() {
 				SmashedPixelDungeon.switchNoFade( SoulShopScene.class );
@@ -137,10 +137,11 @@ public class TitleScene extends PixelScene {
 		add( btnRankings );
 
 		if (SPDSettings.landscape()) {
-			btnRankings     .setPos( w / 2 - btnRankings.width(), topRegion );
-			btnBadges       .setPos( w / 2, topRegion );
-			btnPlay         .setPos( btnRankings.left() - btnPlay.width(), topRegion );
-			btnAbout        .setPos( btnBadges.right(), topRegion );
+            btnSoulShop     .setPos( (w - btnSoulShop.width()) / 2, topRegion);
+            btnBadges       .setPos( btnSoulShop.left() - btnBadges.width() , topRegion );
+            btnPlay         .setPos( btnBadges.left() - btnPlay.width(), topRegion );
+			btnRankings     .setPos( btnSoulShop.right(), topRegion );
+			btnAbout        .setPos( btnRankings.right(), topRegion );
 		} else {
 			btnPlay.setPos( w / 4 - btnPlay.width()/2, topRegion );
 			btnRankings.setPos( 3*w / 4 - btnRankings.width()/2, btnPlay.top() );
